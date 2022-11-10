@@ -13,4 +13,18 @@ public class RomanNumeralsTests
         Assert.Equal(expected, actual);
         
     }
+
+    [Fact]
+    public void ShouldStartWithMMIfNumberHas4DigitsAndFirstDigitIs2()
+    {
+        var inputNumber = 2000;
+        var expected = "MM";
+
+        var actual = RomanNumeralConverter.Convert(inputNumber);
+
+        Assert.Equal(expected, actual);
+
+    }
+
+
 }

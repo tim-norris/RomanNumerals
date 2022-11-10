@@ -10,6 +10,8 @@ public static class RomanNumeralConverter
         var firstDigit = inputNumber.ToString().Substring(0, 1);
         if (firstDigit == "1")
             return "M";
+        else if (firstDigit == "2")
+            return "MM";
         else
             return String.Empty;
 
