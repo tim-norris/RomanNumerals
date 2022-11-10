@@ -12,26 +12,65 @@ public static class RomanNumeralConverter
 
         if (thousandthsDigit != "#")
         {
-            if (thousandthsDigit == "1")
-                sbRomanNumerals.Append("M");
-            else if (thousandthsDigit == "2")
-                sbRomanNumerals.Append("MM");
-            else if (thousandthsDigit == "3")
-                sbRomanNumerals.Append("MMM");
+            var convertedThousandthsDigit = ConvertThousandthsDigit(thousandthsDigit);
+            sbRomanNumerals.Append(convertedThousandthsDigit);
+
         }
 
         var hundredthsDigit = inputNumberArray[1].ToString();
         if (hundredthsDigit != "#")
         {
-            if (hundredthsDigit == "1")
-                sbRomanNumerals.Append("C");
-            if (hundredthsDigit == "2")
-                sbRomanNumerals.Append("CC");
+            var convertedHundredthdsDigit = ConvertHundredthsDigit(hundredthsDigit);
+            sbRomanNumerals.Append(convertedHundredthdsDigit);
         }
 
-          
+
         return sbRomanNumerals.ToString();
 
+    }
+    private static string ConvertThousandthsDigit(string thousandthsDigit)
+    {
+
+        var converted = string.Empty;
+
+        switch (thousandthsDigit)
+        {
+            case "1":
+                converted = "M";
+                break;
+            case "2":
+                converted = "MM";
+                break;
+            case "3":
+                converted = "MMM";
+                break;
+        }
+
+        return converted;
+    }
+
+
+    private static string ConvertHundredthsDigit(string hundredthsDigit)
+    {
+        var converted = string.Empty;
+
+        switch (hundredthsDigit)
+        {
+            case "1":
+                converted = "C";
+                break;
+            case "2":
+                converted = "CC";
+                break;
+            case "3":
+                converted = "CCC";
+                break;
+            case "4":
+                converted = "CD";
+                break;
+        }
+
+        return converted;
     }
 
 }

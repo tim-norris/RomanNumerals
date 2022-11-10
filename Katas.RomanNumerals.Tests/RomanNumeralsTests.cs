@@ -66,4 +66,28 @@ public class RomanNumeralsTests
 
     }
 
+    [Fact]
+    public void ShouldStartWithCCCAfterThousandConverionIfNumberHasHundredDigitOf3()
+    {
+        var inputNumber = 3300;
+        var expected = "MMMCCC";
+
+        var actual = RomanNumeralConverter.Convert(inputNumber);
+
+        Assert.Equal(expected, actual);
+
+    }
+
+    [Fact]
+    public void ShouldStartWithCDAfterThousandConverionIfNumberHasHundredDigitOf4()
+    {
+        var inputNumber = 3400;
+        var expected = "MMMCD";
+
+        var actual = RomanNumeralConverter.Convert(inputNumber);
+
+        Assert.Equal(expected, actual);
+
+    }
+
 }
