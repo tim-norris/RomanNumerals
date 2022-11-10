@@ -38,19 +38,18 @@ public class RomanNumeralsTests
 
     }
 
-    //[Fact]
-    //public void ShouldStartWithIAfterThousandsIndicatorIfNumberHas4DigitsAndFirstHundrethDigitIs1()
-    //{
-    //    var inputNumber = 3000;
-    //    var expected = "MMM";
+    [Fact]
+    //hundreds indicator should be c if hundred digit is 1
 
-    //    var actual = RomanNumeralConverter.Convert(inputNumber);
+    public void ShouldStartWithCAfterThousandConverionIfNumberHasHundredDigitOf1()
+    {
+        var inputNumber = 3100;
+        var expected = "MMMC";
 
-    //    Assert.Equal(expected, actual);
+        var actual = RomanNumeralConverter.Convert(inputNumber);
 
-    //}
+        Assert.Equal(expected, actual);
 
-
-
+    }
 
 }
