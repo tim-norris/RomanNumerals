@@ -3,7 +3,7 @@ namespace Katas.RomanNumerals.Tests;
 public class RomanNumeralsTests
 {
     [Fact]
-    public void ShouldStartWithOneMIfNumberHas4DigitsAndFirstDigitIsAOne()
+    public void ShouldStartWithMIfNumberHas4DigitsAndFirstDigitIs1()
     {
         var inputNumber = 1000;
         var expected = "M";
