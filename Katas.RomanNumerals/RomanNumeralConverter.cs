@@ -5,12 +5,12 @@ public static class RomanNumeralConverter
 {
     public static string Convert(int inputNumber)
     {
-        var inputNumberArray = inputNumber.ToString().ToArray();
+        var inputNumberArray = inputNumber.ToString().PadLeft(4, '#').ToArray();
         var sbRomanNumerals = new StringBuilder();
 
-        var thousandthsDigit = inputNumberArray.Length == 4 ? inputNumberArray[0].ToString() : null;
+        var thousandthsDigit = inputNumberArray[0].ToString();
 
-        if (thousandthsDigit != null)
+        if (thousandthsDigit != "#")
         {
             if (thousandthsDigit == "1")
                 sbRomanNumerals.Append("M");
@@ -20,18 +20,8 @@ public static class RomanNumeralConverter
                 sbRomanNumerals.Append("MMM");
         }
 
-        //string hundredthsDigit;
 
-        //if(inputNumberAsString.Length > 3)
-        //{
-        //    hundredthsDigit = inputNumber.ToString().Substring(1, 2);
-        //}
-        //else
-        //{
-        //    hundredthsDigit = inputNumber.ToString().Substring(0, 1);
-        //}
-
-
+          
         return sbRomanNumerals.ToString();
 
     }
