@@ -68,6 +68,21 @@ public static class RomanNumeralConverter
             case "4":
                 converted = "CD";
                 break;
+            case "5":
+                converted = "D";
+                break;
+            case "6":
+                converted = "DC";
+                break;
+            case "7":
+                converted = "DCC";
+                break;
+            case "8":
+                converted = "DCCC";
+                break;
+            case "9":
+                converted = "CM";
+                break;
         }
 
         return converted;

@@ -90,4 +90,64 @@ public class RomanNumeralsTests
 
     }
 
+    [Fact]
+    public void ShouldStartWithDAfterThousandConverionIfNumberHasHundredDigitOf5()
+    {
+        var inputNumber = 3500;
+        var expected = "MMMD";
+
+        var actual = RomanNumeralConverter.Convert(inputNumber);
+
+        Assert.Equal(expected, actual);
+
+    }
+
+    [Fact]
+    public void ShouldStartWithDCAfterThousandConverionIfNumberHasHundredDigitOf6()
+    {
+        var inputNumber = 3600;
+        var expected = "MMMDC";
+
+        var actual = RomanNumeralConverter.Convert(inputNumber);
+
+        Assert.Equal(expected, actual);
+
+    }
+
+    [Fact]
+    public void ShouldStartWithDCCAfterThousandConverionIfNumberHasHundredDigitOf7()
+    {
+        var inputNumber = 3700;
+        var expected = "MMMDCC";
+
+        var actual = RomanNumeralConverter.Convert(inputNumber);
+
+        Assert.Equal(expected, actual);
+
+    }
+
+    [Fact]
+    public void ShouldStartWithDCCCAfterThousandConverionIfNumberHasHundredDigitOf8()
+    {
+        var inputNumber = 3800;
+        var expected = "MMMDCCC";
+
+        var actual = RomanNumeralConverter.Convert(inputNumber);
+
+        Assert.Equal(expected, actual);
+
+    }
+
+    [Fact]
+    public void ShouldStartWithCMAfterThousandConverionIfNumberHasHundredDigitOf9()
+    {
+        var inputNumber = 3900;
+        var expected = "MMMCM";
+
+        var actual = RomanNumeralConverter.Convert(inputNumber);
+
+        Assert.Equal(expected, actual);
+
+    }
+
 }
