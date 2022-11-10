@@ -20,6 +20,12 @@ public static class RomanNumeralConverter
                 sbRomanNumerals.Append("MMM");
         }
 
+        var hundredthsDigit = inputNumberArray[1].ToString();
+        if (hundredthsDigit != "#")
+        {
+            if (hundredthsDigit == "1")
+                sbRomanNumerals.Append("C");
+        }
 
           
         return sbRomanNumerals.ToString();
