@@ -21,4 +21,8 @@
     </PackageReference>
   </ItemGroup>
 
+  <ItemGroup>
+    <ProjectReference Include="..\Katas.RomanNumerals\Katas.RomanNumerals.csproj" />
+  </ItemGroup>
+
 </Project>
