@@ -38,6 +38,8 @@ public class RomanNumeralsTests
 
     }
 
+    //TODO: Add test should not start with M if number has less than 4 digits
+
     [Fact]
     //hundreds indicator should be c if hundred digit is 1
 
@@ -45,6 +47,18 @@ public class RomanNumeralsTests
     {
         var inputNumber = 3100;
         var expected = "MMMC";
+
+        var actual = RomanNumeralConverter.Convert(inputNumber);
+
+        Assert.Equal(expected, actual);
+
+    }
+
+    [Fact]
+    public void ShouldStartWithCCAfterThousandConverionIfNumberHasHundredDigitOf2()
+    {
+        var inputNumber = 3200;
+        var expected = "MMMCC";
 
         var actual = RomanNumeralConverter.Convert(inputNumber);
 

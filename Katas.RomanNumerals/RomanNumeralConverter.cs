@@ -25,6 +25,8 @@ public static class RomanNumeralConverter
         {
             if (hundredthsDigit == "1")
                 sbRomanNumerals.Append("C");
+            if (hundredthsDigit == "2")
+                sbRomanNumerals.Append("CC");
         }
 
           
