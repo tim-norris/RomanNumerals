@@ -12,6 +12,8 @@ public static class RomanNumeralConverter
             return "M";
         else if (firstDigit == "2")
             return "MM";
+        else if (firstDigit == "3")
+            return "MMM";
         else
             return String.Empty;
 

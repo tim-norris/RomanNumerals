@@ -26,5 +26,17 @@ public class RomanNumeralsTests
 
     }
 
+    [Fact]
+    public void ShouldStartWithMMMIfNumberHas4DigitsAndFirstDigitIs3()
+    {
+        var inputNumber = 3000;
+        var expected = "MMM";
+
+        var actual = RomanNumeralConverter.Convert(inputNumber);
+
+        Assert.Equal(expected, actual);
+
+    }
+
 
 }
