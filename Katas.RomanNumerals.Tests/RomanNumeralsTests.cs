@@ -10,7 +10,7 @@ public class RomanNumeralsTests
 
         var actual = RomanNumeralConverter.Convert(inputNumber);
 
-        Assert.Equal(expected, actual);
+        Assert.StartsWith(expected, actual);
         
     }
 
@@ -22,7 +22,7 @@ public class RomanNumeralsTests
 
         var actual = RomanNumeralConverter.Convert(inputNumber);
 
-        Assert.Equal(expected, actual);
+        Assert.StartsWith(expected, actual);
 
     }
 
@@ -34,9 +34,23 @@ public class RomanNumeralsTests
 
         var actual = RomanNumeralConverter.Convert(inputNumber);
 
-        Assert.Equal(expected, actual);
+        Assert.StartsWith(expected, actual);
 
     }
+
+    //[Fact]
+    //public void ShouldStartWithIAfterThousandsIndicatorIfNumberHas4DigitsAndFirstHundrethDigitIs1()
+    //{
+    //    var inputNumber = 3000;
+    //    var expected = "MMM";
+
+    //    var actual = RomanNumeralConverter.Convert(inputNumber);
+
+    //    Assert.Equal(expected, actual);
+
+    //}
+
+
 
 
 }
