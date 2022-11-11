@@ -14,7 +14,6 @@ public static class RomanNumeralConverter
         {
             var convertedThousandthsDigit = ConvertThousandthsDigit(thousandthsDigit);
             sbRomanNumerals.Append(convertedThousandthsDigit);
-
         }
 
         var hundredthsDigit = inputNumberArray[1].ToString();
@@ -31,6 +30,12 @@ public static class RomanNumeralConverter
             sbRomanNumerals.Append(convertedTenthsDigit);
         }
 
+        var onesDigit = inputNumberArray[3].ToString();
+        if (onesDigit != "#")
+        {
+            var convertedOnesDigit = ConvertOnesDigit(onesDigit);
+            sbRomanNumerals.Append(convertedOnesDigit);
+        }
 
         return sbRomanNumerals.ToString();
 
@@ -127,6 +132,44 @@ public static class RomanNumeralConverter
                 break;
             case "9":
                 converted = "XC";
+                break;
+        }
+
+        return converted;
+    }
+
+    private static string ConvertOnesDigit(string onesDigit)
+    {
+        var converted = string.Empty;
+
+        switch (onesDigit)
+        {
+            case "1":
+                converted = "I";
+                break;
+            case "2":
+                converted = "II";
+                break;
+            case "3":
+                converted = "III";
+                break;
+            case "4":
+                converted = "IV";
+                break;
+            case "5":
+                converted = "V";
+                break;
+            case "6":
+                converted = "VI";
+                break;
+            case "7":
+                converted = "VII";
+                break;
+            case "8":
+                converted = "VIII";
+                break;
+            case "9":
+                converted = "IX";
                 break;
         }
 

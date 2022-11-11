@@ -186,6 +186,7 @@ public class RomanNumeralsTests
         Assert.Equal(expected, actual);
 
     }
+
     [Theory]
     [InlineData(1, "X")]
     [InlineData(2, "XX")]
@@ -200,6 +201,87 @@ public class RomanNumeralsTests
     {
         var inputNumber = 3500 + (tenthsDigit * 10);
         var expected = "MMMD" + tenthsRomanNumerals;
+
+        var actual = RomanNumeralConverter.Convert(inputNumber);
+
+        Assert.Equal(expected, actual);
+
+    }
+
+    [Theory]
+    [InlineData(1, "I")]
+    [InlineData(2, "II")]
+    [InlineData(3, "III")]
+    [InlineData(4, "IV")]
+    [InlineData(5, "V")]
+    [InlineData(6, "VI")]
+    [InlineData(7, "VII")]
+    [InlineData(8, "VIII")]
+    [InlineData(9, "IX")]
+    public void ShouldConvertOnesDigitToRomanNumeralsCorrectly(int onesDigit, string onesRomanNumerals)
+    {
+        var inputNumber = 3550 + onesDigit;
+        var expected = "MMMDL" + onesRomanNumerals;
+
+        var actual = RomanNumeralConverter.Convert(inputNumber);
+
+        Assert.Equal(expected, actual);
+
+    }
+
+    [Fact]
+    public void ShouldConvert3497Properly()
+    {
+        var inputNumber = 3497;
+        var expected = "MMMCDXCVII";
+        
+        var actual = RomanNumeralConverter.Convert(inputNumber);
+
+        Assert.Equal(expected, actual);
+
+    }
+
+    [Fact]
+    public void ShouldConvert497Properly()
+    {
+        var inputNumber = 497;
+        var expected = "CDXCVII";
+
+        var actual = RomanNumeralConverter.Convert(inputNumber);
+
+        Assert.Equal(expected, actual);
+
+    }
+
+    [Fact]
+    public void ShouldConvert97Properly()
+    {
+        var inputNumber = 97;
+        var expected = "XCVII";
+
+        var actual = RomanNumeralConverter.Convert(inputNumber);
+
+        Assert.Equal(expected, actual);
+
+    }
+
+    [Fact]
+    public void ShouldConvert7Properly()
+    {
+        var inputNumber = 7;
+        var expected = "VII";
+
+        var actual = RomanNumeralConverter.Convert(inputNumber);
+
+        Assert.Equal(expected, actual);
+
+    }
+
+    [Fact]
+    public void ShouldConvert0Properly()
+    {
+        var inputNumber = 0;
+        var expected = "";
 
         var actual = RomanNumeralConverter.Convert(inputNumber);
 
