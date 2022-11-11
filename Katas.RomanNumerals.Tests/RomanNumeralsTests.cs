@@ -186,6 +186,25 @@ public class RomanNumeralsTests
         Assert.Equal(expected, actual);
 
     }
+    [Theory]
+    [InlineData(1, "X")]
+    [InlineData(2, "XX")]
+    [InlineData(3, "XXX")]
+    [InlineData(4, "XL")]
+    [InlineData(5, "L")]
+    [InlineData(6, "LX")]
+    [InlineData(7, "LXX")]
+    [InlineData(8, "LXXX")]
+    [InlineData(9, "XC")]
+    public void ShouldConvertTenthsDigitToRomanNumeralsCorrectly(int tenthsDigit, string tenthsRomanNumerals)
+    {
+        var inputNumber = 3500 + (tenthsDigit * 10);
+        var expected = "MMMD" + tenthsRomanNumerals;
 
+        var actual = RomanNumeralConverter.Convert(inputNumber);
+
+        Assert.Equal(expected, actual);
+
+    }
 
 }

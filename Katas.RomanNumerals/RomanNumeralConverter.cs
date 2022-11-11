@@ -24,6 +24,13 @@ public static class RomanNumeralConverter
             sbRomanNumerals.Append(convertedHundredthdsDigit);
         }
 
+        var tenthsDigit = inputNumberArray[2].ToString();
+        if (tenthsDigit != "#")
+        {
+            var convertedTenthsDigit = ConvertTenthsDigit(tenthsDigit);
+            sbRomanNumerals.Append(convertedTenthsDigit);
+        }
+
 
         return sbRomanNumerals.ToString();
 
@@ -82,6 +89,44 @@ public static class RomanNumeralConverter
                 break;
             case "9":
                 converted = "CM";
+                break;
+        }
+
+        return converted;
+    }
+
+    private static string ConvertTenthsDigit(string tenthsDigit)
+    {
+        var converted = string.Empty;
+
+        switch (tenthsDigit)
+        {
+            case "1":
+                converted = "X";
+                break;
+            case "2":
+                converted = "XX";
+                break;
+            case "3":
+                converted = "XXX";
+                break;
+            case "4":
+                converted = "XL";
+                break;
+            case "5":
+                converted = "L";
+                break;
+            case "6":
+                converted = "LX";
+                break;
+            case "7":
+                converted = "LXX";
+                break;
+            case "8":
+                converted = "LXXX";
+                break;
+            case "9":
+                converted = "XC";
                 break;
         }
 
