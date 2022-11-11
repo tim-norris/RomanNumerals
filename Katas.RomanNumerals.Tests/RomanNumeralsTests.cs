@@ -2,6 +2,7 @@ namespace Katas.RomanNumerals.Tests;
 
 public class RomanNumeralsTests
 {
+
     [Fact]
     public void ShouldStartWithMIfNumberHas4DigitsAndFirstDigitIs1()
     {
@@ -40,8 +41,23 @@ public class RomanNumeralsTests
 
     //TODO: Add test should not start with M if number has less than 4 digits
 
+    [Theory]
+    [InlineData(1, "M")]
+    [InlineData(2, "MM")]
+    [InlineData(3, "MMM")]
+
+    public void ShouldConvertThousandthsDigitToRomanNumeralsCorrectly(int thousandthsDigit, string thousandthdsRomanNumerals)
+    {
+        var inputNumber = thousandthsDigit * 1000;
+        var expected = thousandthdsRomanNumerals;
+
+        var actual = RomanNumeralConverter.Convert(inputNumber);
+
+        Assert.Equal(expected, actual);
+
+    }
+
     [Fact]
-    //hundreds indicator should be c if hundred digit is 1
 
     public void ShouldStartWithCAfterThousandConverionIfNumberHasHundredDigitOf1()
     {
@@ -149,5 +165,27 @@ public class RomanNumeralsTests
         Assert.Equal(expected, actual);
 
     }
+
+    [Theory]
+    [InlineData(1, "C")]
+    [InlineData(2, "CC")]
+    [InlineData(3, "CCC")]
+    [InlineData(4, "CD")]
+    [InlineData(5, "D")]
+    [InlineData(6, "DC")]
+    [InlineData(7, "DCC")]
+    [InlineData(8, "DCCC")]
+    [InlineData(9, "CM")]
+    public void ShouldConvertHundredthsDigitToRomanNumeralsCorrectly(int hundredthsDigit, string hundredthsRomanNumerals)
+    {
+        var inputNumber = 3000 + (hundredthsDigit * 100);
+        var expected = "MMM" + hundredthsRomanNumerals;
+
+        var actual = RomanNumeralConverter.Convert(inputNumber);
+
+        Assert.Equal(expected, actual);
+
+    }
+
 
 }
